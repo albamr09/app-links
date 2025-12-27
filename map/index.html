@@ -3,6 +3,12 @@
     <title>Map</title>
     <script>
       function redirectMap() {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', redirectMap);
+          return;
+        }
+
         // Get query parameters from current URL
         const urlParams = new URLSearchParams(window.location.search);
         
@@ -16,10 +22,12 @@
         });
 
         const mapviewFrame = document.getElementById("map-viewer-iframe");
-        mapviewFrame.src = redirectUrl.toString()
+        if (mapviewFrame) {
+          mapviewFrame.src = redirectUrl.toString();
+        }
       };
 
-      // Execute the redirect
+      // Execute the redirect when DOM is ready
       redirectMap();
     </script>
   </head>
