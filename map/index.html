@@ -8,7 +8,7 @@
         
         // Build the redirect URL with apikey
         const redirectUrl = new URL('https://maps.situm.com');
-        redirectUrl.pathname.set('profile', 'z_core');
+        redirectUrl.searchParams.set('profile', 'z_core');
         
         // Copy all query parameters from the original URL
         urlParams.forEach((value, key) => {
