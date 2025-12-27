@@ -2,7 +2,7 @@
   <head>
     <title>Map</title>
     <script>
-      function redirectToMap() {
+      function redirectMap() {
         // Get query parameters from current URL
         const urlParams = new URLSearchParams(window.location.search);
         
@@ -14,19 +14,19 @@
         urlParams.forEach((value, key) => {
           redirectUrl.searchParams.set(key, value);
         });
-        
-        // Redirect to maps.situm.com with all query parameters
-        window.location.href = redirectUrl.toString();
+
+        const mapviewFrame = document.getElementById("map-viewer-iframe");
+        mapviewFrame.src = redirectUrl.toString()
       };
 
       // Execute the redirect
-      // redirectToMap();
+      redirectMap();
     </script>
   </head>
-  <body>
+  <body style="margin: 0">
     <iframe
         id="map-viewer-iframe"
-        style="width:100vw; height:100vh"
+        style="width:100vw; height:100vh; border: unset"
         src="https://maps.situm.com">
     </iframe>
   </body>
