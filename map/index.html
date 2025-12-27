@@ -14,12 +14,21 @@
         
         // Build the redirect URL with profile as path
         const redirectUrl = new URL('https://maps.situm.com');
-        redirectUrl.pathname = '/z_core';
+
+        // Get the profile from the path
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        const mapIndex = pathSegments.indexOf('map');
+        const profile = mapIndex >= 0 && pathSegments[mapIndex + 1] 
+          ? pathSegments[mapIndex + 1] 
+          : 'z_core'; // fallback to default
+        redirectUrl.pathname = '/' + profile;
         
         // Copy all query parameters from the original URL
         urlParams.forEach((value, key) => {
           redirectUrl.searchParams.set(key, value);
         });
+
+        console.log({ redirectUrl });
 
         const mapviewFrame = document.getElementById("map-viewer-iframe");
         if (mapviewFrame) {
