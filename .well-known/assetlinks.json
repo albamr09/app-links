@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.example.expo.gmrapp",
+      "sha256_cert_fingerprints": [
+        "1C:24:57:69:0D:1B:CE:D5:0C:54:EB:4C:48:F1:8F:1B:B6:CC:0B:87:EA:5B:16:8E:6F:7B:8F:B7:91:BB:DA:43"
+      ]
+    }
+  }
+]
+
