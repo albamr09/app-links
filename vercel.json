@@ -9,6 +9,12 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/map/:path*",
+      "destination": "/map/index.html"
+    }
   ]
 }
 
