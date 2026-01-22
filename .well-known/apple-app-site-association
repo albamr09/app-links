@@ -3,7 +3,7 @@
     "details": [
       {
         "appID": "ACLL2M4T26.org.reactjs.native.example.TestSitumAR079-6",
-        "paths": ["/map/*"]
+        "paths": ["/map/*", "/about/*"]
       }
     ]
   }
